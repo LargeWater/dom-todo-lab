@@ -6,7 +6,7 @@ const clear = document.getElementById('clear')
 
 
 btn.addEventListener('click', function(event) {
-  // if(todoInput.value === "") return
+  if(todoInput.value === "") return
   const newItem = document.createElement('li')
   newItem.textContent = todoInput.value
   list.appendChild(newItem)
