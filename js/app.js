@@ -1,6 +1,7 @@
 const todoInput = document.getElementById('inp');
 const btn = document.getElementById('submit-button');
 const list = document.getElementById('todo-list');
+const clear = document.getElementById('clear')
 
 
 
@@ -13,8 +14,13 @@ btn.addEventListener('click', function(event) {
   console.log(newItem)
 })
 
-list.addEventListener('click', function(evt) {
-    const listRemove = evt.target.parentNode
-    listRemove.removeChild(evt.target)
+list.addEventListener('click', function(event) {
+    const listRemove = event.target.parentNode
+    listRemove.removeChild(event.target)
+})
+
+clear.addEventListener('click', function(event){
+  list.innerHTML = ''
+  todoInput.innerHTML = ''
 })
 
