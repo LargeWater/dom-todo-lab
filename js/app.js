@@ -1,23 +1,20 @@
-const todoInput = document.querySelector("#input");
-const btn = document.querySelector("#submit-button");
-const list = document.querySelector("#ul");
-
-let listDiv;
-
-init();
+const todoInput = document.getElementById('inp');
+const btn = document.getElementById('submit-button');
+const list = document.getElementById('todo-list');
 
 
 
 btn.addEventListener('click', function(event) {
-  if(todoInput.value === "") return
+  // if(todoInput.value === "") return
   const newItem = document.createElement('li')
-  newTodo.textContent = todoInput.value
+  newItem.textContent = todoInput.value
   list.appendChild(newItem)
   todoInput.value = ''
+  console.log(newItem)
 })
 
+list.addEventListener('click', function(evt) {
+    const listRemove = evt.target.parentNode
+    listRemove.removeChild(evt.target)
+})
 
-
-function init() {
-  listDiv = [];
-}
